@@ -1,0 +1,85 @@
+<%= form_for(@task) do |f| %>
+  <% if @task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+      <ul>
+      <% @task.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.number_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :priority %><br>
+    <%= f.number_field :priority %>
+  </div>
+  <div class="field">
+    <%= f.label :location_id %><br>
+    <%= f.number_field :location_id %>
+  </div>
+  <div class="field">
+    <%= f.label :start_at %><br>
+    <%= f.datetime_select :start_at %>
+  </div>
+  <div class="field">
+    <%= f.label :duration %><br>
+    <%= f.number_field :duration %>
+  </div>
+  <div class="field">
+    <%= f.label :finish_at %><br>
+    <%= f.datetime_select :finish_at %>
+  </div>
+  <div class="field">
+    <%= f.label :due_at %><br>
+    <%= f.datetime_select :due_at %>
+  </div>
+  <div class="field">
+    <%= f.label :due_event %><br>
+    <%= f.text_field :due_event %>
+  </div>
+  <div class="field">
+    <%= f.label :reminder_at %><br>
+    <%= f.datetime_select :reminder_at %>
+  </div>
+  <div class="field">
+    <%= f.label :reminder_type %><br>
+    <%= f.number_field :reminder_type %>
+  </div>
+  <div class="field">
+    <%= f.label :occurance_id %><br>
+    <%= f.number_field :occurance_id %>
+  </div>
+  <div class="field">
+    <%= f.label :occurance_deleted %><br>
+    <%= f.check_box :occurance_deleted %>
+  </div>
+  <div class="field">
+    <%= f.label :parent_id %><br>
+    <%= f.number_field :parent_id %>
+  </div>
+  <div class="field">
+    <%= f.label :collapse %><br>
+    <%= f.check_box :collapse %>
+  </div>
+  <div class="field">
+    <%= f.label :child_duration %><br>
+    <%= f.number_field :child_duration %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
