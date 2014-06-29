@@ -1,9 +1,22 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = DependantTask -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => DependantTask %></h1>
+</div>
 
-<p>
-  <strong>Task:</strong>
-  <%= @dependant_task.task %>
-</p>
+<div class="fieldset">
+  <dl>
+  </dl>
+</div>
 
-<%= link_to 'Edit', edit_dependant_task_path(@dependant_task) %> |
-<%= link_to 'Back', dependant_tasks_path %>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              dependant_tasks_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_dependant_task_path(@dependant_task), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              dependant_task_path(@dependant_task),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
+

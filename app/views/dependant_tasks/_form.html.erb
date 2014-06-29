@@ -1,21 +1,10 @@
-<%= form_for(@dependant_task) do |f| %>
-  <% if @dependant_task.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@dependant_task.errors.count, "error") %> prohibited this dependant_task from being saved:</h2>
+<%= form_for @dependant_task, :html => { :class => 'form-horizontal form-model' } do |f| %>
 
-      <ul>
-      <% @dependant_task.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  dependant_tasks_path, :class => 'btn btn-default' %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :task_id %><br>
-    <%= f.text_field :task_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
   </div>
 <% end %>

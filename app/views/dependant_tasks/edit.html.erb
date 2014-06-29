@@ -1,6 +1,5 @@
-<h1>Editing dependant_task</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @dependant_task %> |
-<%= link_to 'Back', dependant_tasks_path %>
+<%- model_class = DependantTask -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => DependantTask %></h1>
+</div>
+<%= render :partial => 'form' %>
