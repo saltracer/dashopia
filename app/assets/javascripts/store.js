@@ -1,5 +1,9 @@
-App.Store = DS.Store.extend({
+App.ApplicationStore = DS.Store.extend({
 
+});
+
+DS.RESTAdapter.reopen({
+  namespace: 'api/v1'
 });
 
 // Override the default adapter with the `DS.ActiveModelAdapter` which

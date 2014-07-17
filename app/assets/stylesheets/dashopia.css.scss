@@ -1,0 +1,150 @@
+/*******************************
+            Global
+*******************************/
+
+html,
+body {
+  font-size: 15px;
+  height: 100%;
+}
+
+body {
+  font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  background: #FFFFFF;
+  margin: 0px;
+  padding: 0px;
+  text-rendering: optimizeLegibility;
+  min-width: 320px;
+    /*margin-top: 40px;*/
+}
+
+.ui.header {
+  font-family: 'Source Sans Pro', "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+/*******************************
+            Global
+*******************************/
+
+/*-------------------
+        Sidebar
+--------------------*/
+
+#feed .sidebar {
+  overflow: visible;
+}
+
+/*-------------------
+        Grid
+--------------------*/
+
+#feed .grid {
+  height: 100%;
+}
+#feed > .grid > .column {
+  height: 100%;
+}
+
+
+/*-------------------
+       Inbox
+--------------------*/
+
+#feed .inbox.tab {
+  background-color: #FFFFFF;
+}
+#feed .inbox.tab .item {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+#feed .inbox.tab .item .rating {
+  margin-top: 0.2rem;
+}
+#feed .inbox.tab .item .description {
+  margin-left: 2em;
+}
+#feed .page {
+  float: right;
+  margin-top: 0.9em;
+}
+
+#feed .middle.column {
+  padding: 1em 2em;
+}
+#feed .right.column {
+  padding: 1em 2em;
+  background-color: #FFFFFF;
+}
+/*<style>*/
+
+  /*body {
+    text-align: center;
+    font-size: 14px;
+    font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+    }*/
+
+  #wrap {
+    width: 1100px;
+    margin: 0 auto;
+    }
+
+ /* #external-events {
+    float: left;
+    width: 150px;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    background: #eee;
+    text-align: left;
+    }*/
+/*
+  #external-events h4 {
+    font-size: 16px;
+    margin-top: 0;
+    padding-top: 1em;
+    }*/
+
+/* try to mimick the look of a real event */
+  .external-event {
+    /*margin: 10px 0;
+    padding: 2px 4px;
+    background: #3366CC;
+    color: #fff;
+    font-size: .85em;*/
+    cursor: pointer;
+    }
+/*
+  #external-events p {
+    margin: 1.5em 0;
+    font-size: 11px;
+    color: #666;
+    }
+*/
+  /*#external-events p input {
+    margin: 0;
+    vertical-align: middle;
+    }*/
+
+  #calendar {
+    /*float: right;*/
+    width: 900px;
+    }
+
+/*</style>*/
+
+/*******************************
+          Responsive
+*******************************/
+
+
+@media only screen and (max-width : 1000px) {
+  #feed .inbox .date {
+    float: none;
+    margin-bottom: 0.5em;
+  }
+}
+
+@media only screen and (max-width : 1250px) {
+  #feed .left.column > .menu .item {
+    font-size: 1rem;
+  }
+}

@@ -12,14 +12,16 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require semantic-ui
 //= require bootstrap
-
+//= require fullcalendar
 //= require handlebars
 //= require ember
 //= require ember-data
+//= require dashopia
 //= require_self
 //= require app
 
 // for more details see: http://emberjs.com/guides/application/
-window.App = Ember.Application.create();
+window.App = Ember.Application.create({rootElement: '#ember-app'});
 

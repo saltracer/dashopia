@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
-  get 'landings/index'
 
-  resources :dependant_tasks
+  namespace :api do
+    namespace :v1 do
+      resources :dependant_tasks
+      resources :tasks
+    end
+  end
 
-  resources :tasks
 
   devise_for :users, controllers: {registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords"}, skip: [:sessions, :registrations]
   # The priority is based upon order of creation: first created -> highest priority.
@@ -72,5 +75,7 @@ Rails.application.routes.draw do
     put    "signup"  => "devise/registrations#update", as: :update_user_registration
     get    "account" => "devise/registrations#edit",   as: :edit_user_registration
   end
+
+  get '*path', to: 'home#index'
 
 end
