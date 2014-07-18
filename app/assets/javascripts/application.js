@@ -19,9 +19,6 @@
 //= require ember
 //= require ember-data
 
-// = require ember-devise-simple-auth/globals
-//= require_tree ../../../vendor/assets/bower_components
-
 //= require dashopia
 //= require_self
 //= require app
@@ -29,12 +26,5 @@
 // for more details see: http://emberjs.com/guides/application/
 window.App = Ember.Application.create(
 {
-  rootElement: '#ember-app',
-  deviseEmberAuth: {
-    signInPath: "/login", // the URL users will see in the browser for the sign in page
-    userModelType: "user", // **ember-data only** name of the model that represents your user; same thing you'd pass to `store.find("...")` in a route
-    deviseSignInPath: "/users/sign_in", // the URL to POST to for creating a session
-    deviseSignOutPath: "/users/sign_out", // the URL to DELETE to for signing out
-    currentSessionPath: "/sessions/current" // the URL for getting the current signed-in state; this is currently added by the gem
-  }
+  rootElement: '#ember-app'
 });

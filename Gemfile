@@ -44,7 +44,7 @@ gem 'bower-rails'
 
 gem 'ember-rails'
 gem 'ember-source'
-gem 'ember_devise_simple_auth'
+# gem 'ember_devise_simple_auth'
 gem 'thin'
 
 gem 'tzinfo-data'

@@ -115,8 +115,6 @@ GEM
       railties (>= 3.1)
     ember-source (1.5.1.1)
       handlebars-source (~> 1.0)
-    ember_devise_simple_auth (0.4.4)
-      devise (>= 3.0.0)
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.2.1)
@@ -293,7 +291,6 @@ DEPENDENCIES
   dotenv-rails
   ember-rails
   ember-source
-  ember_devise_simple_auth
   factory_girl_rails
   ffaker
   fullcalendar-rails

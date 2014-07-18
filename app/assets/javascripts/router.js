@@ -7,4 +7,9 @@ App.Router.reopen({
 
 App.Router.map(function() {
   this.resource('tasks');
+
+
+  this.route('sign_up');
+  this.route('sign_in');
+  this.route('sign_out');
 });

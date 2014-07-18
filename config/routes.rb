@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  devise_scope :user do
-    get "/sessions/current" => "ember_devise_simple_auth/sessions#show"
-  end
-
   namespace :api do
     namespace :v1 do
       resources :dependant_tasks
@@ -12,7 +8,12 @@ Rails.application.routes.draw do
   end
 
 
-  devise_for :users, controllers: { sessions: 'ember_devise_simple_auth/sessions' }, controllers: {registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords"}, skip: [:sessions, :registrations]
+  #devise_for :users, controllers: { sessions: 'ember_devise_simple_auth/sessions' }, controllers: {registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords"}, skip: [:sessions, :registrations]
+  devise_for :users, :controllers => {registrations: "json_registrations", sessions: "json_sessions" }
+
+  # resources :users, only: [:create]
+  # resources :sessions, only: [:create, :destroy]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -69,16 +70,16 @@ Rails.application.routes.draw do
   #   end
 
   #->Prelang (user_login:devise/stylized_paths)
-  devise_scope :user do
-    get    "login"   => "devise/sessions#new",         as: :new_user_session
-    post   "login"   => "devise/sessions#create",      as: :user_session
-    delete "signout" => "devise/sessions#destroy",     as: :destroy_user_session
+  # devise_scope :user do
+  #   get    "login"   => "devise/sessions#new",         as: :new_user_session
+  #   post   "login"   => "devise/sessions#create",      as: :user_session
+  #   delete "signout" => "devise/sessions#destroy",     as: :destroy_user_session
 
-    get    "signup"  => "devise/registrations#new",    as: :new_user_registration
-    post   "signup"  => "devise/registrations#create", as: :user_registration
-    put    "signup"  => "devise/registrations#update", as: :update_user_registration
-    get    "account" => "devise/registrations#edit",   as: :edit_user_registration
-  end
+  #   get    "signup"  => "devise/registrations#new",    as: :new_user_registration
+  #   post   "sign_up"  => "json_registrations#create", as: :user_registration
+  #   put    "signup"  => "devise/registrations#update", as: :update_user_registration
+  #   get    "account" => "devise/registrations#edit",   as: :edit_user_registration
+  # end
 
   get '*path', to: 'home#index'
 
