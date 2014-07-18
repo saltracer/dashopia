@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  devise_scope :user do
+    get "/sessions/current" => "ember_devise_simple_auth/sessions#show"
+  end
+
   namespace :api do
     namespace :v1 do
       resources :dependant_tasks
@@ -8,7 +12,7 @@ Rails.application.routes.draw do
   end
 
 
-  devise_for :users, controllers: {registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords"}, skip: [:sessions, :registrations]
+  devise_for :users, controllers: { sessions: 'ember_devise_simple_auth/sessions' }, controllers: {registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords"}, skip: [:sessions, :registrations]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

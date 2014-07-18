@@ -39,7 +39,7 @@ function setup_calendar(userId){
                     center: 'title',
                     right: 'month,agendaWeek,agendaDay'
                 },
-                events: "http://dashopia.com/json.php?userid="+userId,
+                events: "http://localhost:3000/tasks?userid="+userId,
                 defaultView: 'agendaWeek',
                 editable: true,
                 droppable: true, // this allows things to be dropped onto the calendar !!!
