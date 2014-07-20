@@ -4,6 +4,7 @@ class JsonRegistrationsController < Devise::RegistrationsController
   before_action :configure_permitted_parameters
 
   def create
+    puts "\n\nparams:#{params}:endparams\n\n"
     build_resource(user_params)
 
     if resource.save
