@@ -1,0 +1,7 @@
+<h2>Tasks</h2>
+<ul>
+{{#each task in model}}
+<li>{{#link-to 'task' task}}{{task.name}}{{/link-to}}</li>
+{{/each}}
+</ul>
+{{outlet}}

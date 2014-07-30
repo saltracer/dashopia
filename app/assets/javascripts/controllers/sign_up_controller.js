@@ -7,7 +7,6 @@ App.SignUpController = Ember.Controller.extend({
           user:
           {
             email: this.get('email'),
-            username: this.get('username'),
             password: this.get('password'),
             password_confirmation: this.get('password_confirmation')
           }

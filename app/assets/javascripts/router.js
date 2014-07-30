@@ -1,12 +1,17 @@
 // For more information see: http://emberjs.com/guides/routing/
 
 App.Router.reopen({
-  location: 'auto',
+  // location: 'auto',
   rootURL: '/'
 });
 
 App.Router.map(function() {
-  this.resource('tasks');
+  this.resource('tasks', { path: '/tasks'}, function() {
+    this.route('new');
+  });
+  this.resource('task', {path: 'task/:task_id'}, function() {
+    this.route('edit');
+  });
 
 
   this.route('sign_up');
